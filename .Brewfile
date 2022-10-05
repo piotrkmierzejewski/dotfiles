@@ -2,6 +2,7 @@ tap "homebrew/cask"
 
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
+tap "homebrew/cask-drivers"
 
 brew "mas"
 brew "coreutils"
@@ -20,6 +21,7 @@ cask "font-jetbrains-mono"
 cask "fira-code"
 
 cask "google-chrome"
+cask "logi-options-plus"
 cask "vivaldi"
 cask "authy"
 cask "1password"
@@ -43,5 +45,5 @@ cask "spotify"
 cask "telegram"
 cask "messenger"
 
-mas "Xcode", id: 497799835
+# mas "Xcode", id: 497799835
 mas "iA Writer", id: 775737590
