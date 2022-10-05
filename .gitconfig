@@ -1,0 +1,51 @@
+[user]
+	name = Piotr Mierzejewski
+	email = me@piotrmierzejewski.com
+	signingkey = EF67D2C91C05DA72
+[commit]
+	gpgSign = true
+[init]
+	defaultBranch = main
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+[color "status"]
+	added = green
+	changed = blue
+	untracked = red
+[log]
+	# Better date formats in logs
+	date = rfc
+[alias]
+	s = status
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	# Sneak changes into your previous commit
+	sneak = commit -a --amend --no-edit
+	# Undo the last commit, but preserve the staging area
+	undo = reset --soft HEAD^
+	# Show number of commits from all authors.
+	stats = shortlog -sn --all --no-merges
+	# Show detailed logs
+	graph = log --graph --decorate --stat --date=iso --all
+	# See everything everyone has done recently
+	overview = log --oneline --no-merges
+	# See everything I have done recently
+	remind = log --oneline --no-merges --author=me@piotrmierzejewski.com
+	# See the timestamp of a given commit
+	when = show -s --format=%ci
+	# Show your ten most recently checked out branches
+	recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+	# Show your ten most recently checked out branches
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	stats = shortlog -sn --all --no-merges
+[core]
+	excludesfile = /Users/piotrmierzejewski/.global-gitignore
+	editor = subl -n -w
