@@ -1,5 +1,4 @@
 tap "homebrew/cask"
-
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/cask-drivers"
@@ -16,7 +15,6 @@ brew "gnupg"
 brew "grep"
 brew "openssh"
 brew "gmp"
-brew "nvm"
 
 cask "font-jetbrains-mono"
 cask "font-fira-code"
