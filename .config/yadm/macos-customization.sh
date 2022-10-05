@@ -173,6 +173,9 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 # Do not save new documents to the cloud
 defaults write com.apple.TextEdit NSDocumentSaveNewDocumentsToCloud -bool false
 
+# Open to empty file
+defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
+
 # Sent font family and size
 defaults write com.apple.TextEdit NSFixedPitchFont -string "Menlo-Regular"
 defaults write com.apple.TextEdit NSFixedPitchFontSize -int 14
