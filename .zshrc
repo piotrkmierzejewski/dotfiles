@@ -6,8 +6,8 @@ export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/piotrmierzejewski/.oh-my-zsh"
-export ZSH_CUSTOM="/Users/piotrmierzejewski/.oh-my-zsh-custom"
+export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
