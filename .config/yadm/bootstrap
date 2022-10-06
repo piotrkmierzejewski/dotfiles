@@ -1,18 +1,12 @@
 #!/bin/sh
 
-system_type=$(uname -s)
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
-if [ "$system_type" = "Darwin" ]; then
-  if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  fi
-
-  if [ ! -d "${HOME}/.nvm/.git" ]; then
-    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-    source ~/.zshrc
-    nvm install 16
-    nvm default 16
-  fi
-
-
+if [ ! -d "${HOME}/.nvm/.git" ]; then
+  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+  source ~/.zshrc
+  nvm install 16
+  nvm default 16
 fi
