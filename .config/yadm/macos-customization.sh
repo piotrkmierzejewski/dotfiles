@@ -50,8 +50,8 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 1 # 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 10 # 15
 
 ###############################################################################
 # Finder #
@@ -83,6 +83,9 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+ # Hide tags in sidebar
+defaults write com.apple.finder ShowRecentTags -bool false
 
 
 ###############################################################################
@@ -188,6 +191,13 @@ defaults write com.apple.TextEdit NSFixedPitchFontSize -int 14
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
+# iTunes                                                                      #
+###############################################################################
+
+# Stop iTunes from responding to the keyboard media keys.
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
+
+###############################################################################
 # iTerm2                                                                      #
 ###############################################################################
 # Specify the preferences directory
@@ -195,3 +205,18 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.config/iterm2
 
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
+###############################################################################
+# Dark / light mode                                                           #
+###############################################################################
+
+if [ "$(whoami)" == "piotrmierzejewski" ]; then
+	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
+fi
+
+if [ "$(whoami)" == "pmierzejewski" ]; then
+	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
+fi
+
+killall Dock
+killall Finder
