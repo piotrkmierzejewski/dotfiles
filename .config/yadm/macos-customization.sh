@@ -45,6 +45,11 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Disable “natural” (Lion-style) scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
+# Mouse speed
+defaults write NSGlobalDomain com.apple.mouse.scaling -int 1
+defaults write NSGlobalDomain com.apple.scrollwheel.scaling -string "0.5"
+defaults write NSGlobalDomain com.apple.mouse.doubleClickThreshold -string "0.5"
+
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1 # 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 10 # 15
