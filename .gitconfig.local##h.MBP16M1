@@ -1,0 +1,5 @@
+[user]
+	name = Piotr Mierzejewski
+	email = piotr@veed.io
+[commit]
+	gpgSign = false
