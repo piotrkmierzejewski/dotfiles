@@ -43,6 +43,7 @@ cask "slack"
 cask "spotify"
 cask "telegram"
 cask "messenger"
+cask "vlc"
 
 # mas "Xcode", id: 497799835
 mas "iA Writer", id: 775737590
